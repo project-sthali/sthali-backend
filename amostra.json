@@ -1,0 +1,129 @@
+[
+    {
+        "Id": "sha256:ce53f42164b65b6920ca646cb0ecc2a692fc0d5512744ccf45d7ecd3703020b4",
+        "RepoTags": [
+            "irrigation:latest"
+        ],
+        "RepoDigests": [],
+        "Parent": "sha256:f6ab17ab7a62cb3441e7d425671bdc0a28a75bea3b8da2c607c432d2d8ad7f47",
+        "Comment": "",
+        "Created": "2023-04-21T01:27:36.418055475Z",
+        "Container": "99c319b71ad025577d6fd4effef42fbd15db1c7f8b8f237812ad72f544d629d6",
+        "ContainerConfig": {
+            "Hostname": "99c319b71ad0",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8080/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D",
+                "PYTHON_VERSION=3.7.13",
+                "PYTHON_PIP_VERSION=22.0.4",
+                "PYTHON_SETUPTOOLS_VERSION=57.5.0",
+                "PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/6ce3639da143c5d79b44f94b04080abf2531fd6e/public/get-pip.py",
+                "PYTHON_GET_PIP_SHA256=ba3ab8267d91fd41c58dbce08f76db99f747f716d85ce1865813842bb035524d"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "CMD [\"pipe\" \"db\" \"up,\" \"run\"]"
+            ],
+            "Image": "sha256:f6ab17ab7a62cb3441e7d425671bdc0a28a75bea3b8da2c607c432d2d8ad7f47",
+            "Volumes": {
+                "/irrigation/instance": {}
+            },
+            "WorkingDir": "/irrigation",
+            "Entrypoint": [
+                "./cmd.py"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "MAINTAINER": "Felipe Paolozze <felipe.paolozze@sensedata.com.br>"
+            }
+        },
+        "DockerVersion": "20.10.21",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8080/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D",
+                "PYTHON_VERSION=3.7.13",
+                "PYTHON_PIP_VERSION=22.0.4",
+                "PYTHON_SETUPTOOLS_VERSION=57.5.0",
+                "PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/6ce3639da143c5d79b44f94b04080abf2531fd6e/public/get-pip.py",
+                "PYTHON_GET_PIP_SHA256=ba3ab8267d91fd41c58dbce08f76db99f747f716d85ce1865813842bb035524d"
+            ],
+            "Cmd": [
+                "pipe",
+                "db",
+                "up,",
+                "run"
+            ],
+            "Image": "sha256:f6ab17ab7a62cb3441e7d425671bdc0a28a75bea3b8da2c607c432d2d8ad7f47",
+            "Volumes": {
+                "/irrigation/instance": {}
+            },
+            "WorkingDir": "/irrigation",
+            "Entrypoint": [
+                "./cmd.py"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "MAINTAINER": "Felipe Paolozze <felipe.paolozze@sensedata.com.br>"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 256086120,
+        "VirtualSize": 256086120,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/d20d058d26437b3f6406a6ca0948d5f2402ca574ec97dea58bca684ed1ddd450/diff:/var/lib/docker/overlay2/5b998c706bfc5c857e92a5065a7850b88d7d762b611d402f3212f767015217a0/diff:/var/lib/docker/overlay2/f4e3f3ddc9680a8ccf497c38b2fb66cba661ba3d45b593ff06a8c00b111da105/diff:/var/lib/docker/overlay2/b5dd2ae42b4a194ad990963c8d88af2a00e8959ccd0d8d7acefcb59d8e09d8b0/diff:/var/lib/docker/overlay2/f1b70851cac0e0dd90b371fb31cd3600c9ed3659bc7d5e0048af8716614bf0cf/diff:/var/lib/docker/overlay2/fad638003cdf0b93964067aaf699a495c6e53a02d3fffdf033ab7b567b1925fb/diff:/var/lib/docker/overlay2/c34b12bc884d4fa9e13e172ce48acc1b94cddda5c5f9827aa6a606e0365f3040/diff:/var/lib/docker/overlay2/28a3b965eb46030b6160793a0a43059723dd2efcb0c78b4796cd3183486012c9/diff",
+                "MergedDir": "/var/lib/docker/overlay2/95c1f6552f74d5d5d9282f83c49f032632f685b0560de1112708ede3ee5c73de/merged",
+                "UpperDir": "/var/lib/docker/overlay2/95c1f6552f74d5d5d9282f83c49f032632f685b0560de1112708ede3ee5c73de/diff",
+                "WorkDir": "/var/lib/docker/overlay2/95c1f6552f74d5d5d9282f83c49f032632f685b0560de1112708ede3ee5c73de/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:43b3c4e3001c662d1c264ffb132f4e52950893452b15508df810214f1d3f124b",
+                "sha256:0255573f4829db2573af99328e4a64c86fe268309752d3159515d115ff88e6d6",
+                "sha256:fa17eed5cda1d968b104b1118eaaf2ade0886d60c48a607580e6332f8237a3c6",
+                "sha256:b1c355c6738b01e53ecfa0d5c82b20d4a7d5e572b1f11d513165e6553fb8e099",
+                "sha256:a5492d740cec9f2b1c663fe26eb5aaeffae1cf38eb55dd0fda78287167a8e5b9",
+                "sha256:3a9d0724a8b160761e0abebf4bd2f66a35491dc35f834d280f6240f9211e05aa",
+                "sha256:32fc52178454a9305f5a982deec11f576ea9612b0a23aba374c6d538339b2b84",
+                "sha256:a711f695a0ce12cfaf377a2838eb200a043d6fcec3f803890bae18a5571b37fc",
+                "sha256:cf9d2336fa8721fd23faa9eef22b52f36d5a7f650b2e36cf21016cb5a072f611"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2023-04-20T22:27:36.483085245-03:00"
+        }
+    }
+]
