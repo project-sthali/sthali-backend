@@ -3,10 +3,25 @@ version: '3'
 services:
   app:
     build: .
-    ports:
-      - "80:80"
-    volumes:
-      - ./config.cfg:/app/config.cfg
+    depends_on:
+      - db
     environment:
       - PYTHONUNBUFFERED=1
+    ports:
+      - '80:80'
+    volumes:
+      - ./config.cfg:/app/config.cfg
     # command: uvicorn src:app --host 0.0.0.0 --port 80
+
+  db:
+    image: 'postgres:latest'
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=dbuser
+      - POSTGRES_PASSWORD=dbpassword
+
+volumes:
+  postgres-data:
