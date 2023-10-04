@@ -1,4 +1,4 @@
-FROM python:3.10.11-alpine AS base
+FROM python:3.11.0-alpine AS base
 
 LABEL maintainer="Jhunu Fernandes jhunu.fernandes@gmail.com"
 
