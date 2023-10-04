@@ -16,6 +16,12 @@ resource_spec = ResourceSpec(
             type=str,
             required=True,
         ),
+        Field(
+            name='height',
+            type=int,
+            required=False,
+            default=123,
+        ),
     ]
 )
 
