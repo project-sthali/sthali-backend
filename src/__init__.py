@@ -1,30 +1,28 @@
-from fastapi import FastAPI
+from sthali_crud import Field, SthaliCRUD, ResourceSpec
+from .db import DB
 
-from .libs.sthali_crud import SthaliCRUD, ResourceSpec, Field
-
-
-resource_spec = ResourceSpec(
+_resource_spec = ResourceSpec(
     name='people',
     fields=[
         Field(
             name='id',
             type=int,
-            required=True,
         ),
         Field(
             name='name',
             type=str,
-            required=True,
         ),
         Field(
             name='height',
             type=int,
-            required=False,
             default=123,
+            allow_none=False,
         ),
     ]
 )
 
+_db = DB()
+_sthalicrud = SthaliCRUD(_resource_spec=_resource_spec, _db=_db)
+DB.replace_model(_sthalicrud.model)
 
-fastapi = FastAPI()
-SthaliCRUD(fastapi, resource_spec)
+fastapi = _sthalicrud.app
