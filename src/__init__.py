@@ -4,10 +4,10 @@ from .db import DB
 _resource_spec = ResourceSpec(
     name='people',
     fields=[
-        Field(
-            name='id',
-            type=int,
-        ),
+        # Field(
+        #     name='id',
+        #     type=int,
+        # ),
         Field(
             name='name',
             type=str,
