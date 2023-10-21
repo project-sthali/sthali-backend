@@ -1,22 +1,21 @@
-from pydantic.dataclasses import dataclass
-from sthali_crud import FieldDefinition, SthaliCRUD, ResourceSpec
+from sthali_crud import FieldDefinition, ResourceSpecification, SthaliCRUD
 from .db import DB
 
 
-_resource_spec = ResourceSpec(
+_resource_spec = ResourceSpecification(
     name='people',
     fields=[
         FieldDefinition(
             name='name',
             type=str,
         ),
-        FieldDefinition(
-            name='height',
-            type=int,
-            has_default=True,
-            default_value=123,
-            allow_none=True,
-        ),
+        # FieldDefinition(
+        #     name='height',
+        #     type=int,
+        #     has_default=True,
+        #     default_value=123,
+        #     allow_none=True,
+        # ),
         FieldDefinition(
             name='age',
             type=int,
@@ -25,8 +24,8 @@ _resource_spec = ResourceSpec(
 )
 
 
-_db = DB()
-_sthalicrud = SthaliCRUD(_resource_spec=_resource_spec, _db=_db)
-# DB.replace_model(_sthalicrud.model)
+_db: DB = DB()
+_sthalicrud: SthaliCRUD = SthaliCRUD(resource_spec=_resource_spec, db=_db)
+# _sthalicrud.replace_models(_sthalicrud.schema)
 
 fastapi = _sthalicrud.app
