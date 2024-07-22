@@ -1,19 +1,28 @@
-FROM python:3.11.0-alpine AS base
+
+FROM python:3.11-alpine AS base
 
 LABEL maintainer="Jhunu Fernandes jhunu.fernandes@gmail.com"
 
-WORKDIR /app
+ENV SRC_PATH=/app
 
-COPY requirements.txt /app/requirements.txt
+COPY pyproject.toml ${SRC_PATH}/pyproject.toml
+
+RUN mkdir -p ${SRC_PATH}/volume
+
+VOLUME ${SRC_PATH}/volume
+
+WORKDIR ${SRC_PATH}
 
 RUN apk add --no-cache build-base libffi-dev openssl-dev && \
-    pip install --no-cache-dir -r requirements.txt && \
+    python -m pip install --no-cache-dir .[stage] && \
     apk del build-base libffi-dev openssl-dev
 
 FROM base AS final
 
-COPY ./src /app/src
-
-ENTRYPOINT ["uvicorn", "src:app", "--host", "0.0.0.0", "--port", "80"]
+COPY /src ${SRC_PATH}
 
 EXPOSE 80
+
+ENTRYPOINT ["uvicorn"]
+
+CMD ["run:app", "--host", "0.0.0.0", "--port", "80"]

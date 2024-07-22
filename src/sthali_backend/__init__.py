@@ -1,40 +1,17 @@
-from os import path
-
-from sthali_crud import AppSpecification, SthaliCRUD
-
-TINYDB_PATH = path.join(path.dirname(__file__), "../../tinydb.json")
-SPEC = {
-    "resources": [
-        {
-            "db": {"engine": "tinydb", "path": TINYDB_PATH},
-            "name": "cats",
-            "fields": [
-                {
-                    "name": "name",
-                    "type": str,
-                },
-                {
-                    "name": "age",
-                    "type": int,
-                },
-            ],
-        },
-        {
-            "db": {"engine": "tinydb", "path": TINYDB_PATH},
-            "name": "dogs",
-            "fields": [
-                {
-                    "name": "name",
-                    "type": str,
-                },
-                {
-                    "name": "fur",
-                    "type": bool,
-                },
-            ],
-        },
-    ]
-}
+from sthali_auth import http_basic, credentials, security
+from sthali_crud import AppSpecification, SthaliCRUD, load_and_parse_spec_file
 
 
-sthalicrud = SthaliCRUD(AppSpecification(**SPEC)).app
+class SthaliBackend:
+    def __init__(self, app_spec: AppSpecification) -> None:
+        self.app = SthaliCRUD(app_spec)
+
+
+__all__ = [
+    "AppSpecification",
+    "SthaliBackend",
+    "load_and_parse_spec_file",
+    "http_basic",
+    "credentials",
+    "security",
+]
