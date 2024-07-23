@@ -1,17 +1,17 @@
-from sthali_auth import http_basic, credentials, security
+from sthali_auth import APIKey, APIKeyAuth
 from sthali_crud import AppSpecification, SthaliCRUD, load_and_parse_spec_file
 
 
 class SthaliBackend:
     def __init__(self, app_spec: AppSpecification) -> None:
-        self.app = SthaliCRUD(app_spec)
+        sthali_crud = SthaliCRUD(app_spec)
+        self.app = sthali_crud.app
 
 
 __all__ = [
+    "APIKey",
+    "APIKeyAuth",
     "AppSpecification",
-    "SthaliBackend",
     "load_and_parse_spec_file",
-    "http_basic",
-    "credentials",
-    "security",
+    "SthaliBackend",
 ]
