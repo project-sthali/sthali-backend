@@ -17,8 +17,9 @@ classifiers = [
 dependencies = [
   "fastapi >= 0.111.1",
   "pydantic >= 2.8.2",
-  "sthali-crud",
   "sthali-auth",
+  "sthali-crud",
+  "uvicorn",
 ]
 
 [project.optional-dependencies]
@@ -39,7 +40,7 @@ branch = true
 command_line = "-m unittest discover -v -s tests/"
 
 [tool.coverage.report]
-omit = ["tests/*"]
+omit = ["tests/*", "sthali_auth/*", "sthali_crud/*"]
 show_missing = true
 
 [tool.ruff]

@@ -1,4 +1,5 @@
 EXAMPLE_SPEC = {
+    "title": "SthaliBackend",
     "resources": [
         {
             "db": {"engine": "Default", "path": ""},
