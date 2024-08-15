@@ -7,7 +7,7 @@ from fastapi import FastAPI
 from pydantic import Field
 from pydantic.dataclasses import dataclass
 
-from sthali_auth import APIKey, APIKeyAuth
+from sthali_auth import APIKeySpecification, APIKeyAuth
 from sthali_crud import AppSpecification as CRUDAppSpecification
 from sthali_crud import ResourceSpecification as CRUDResourceSpecification
 from sthali_crud import SthaliCRUD, load_and_parse_spec_file
@@ -22,7 +22,7 @@ class ResourceSpecification(CRUDResourceSpecification):
         name (str): The name of the resource.
         fields (list[FieldDefinition]): The list of field definitions for the resource.
     """
-    auth: None
+    auth: None = None
 
 
 @dataclass
@@ -71,7 +71,7 @@ class SthaliBackend(SthaliCRUD):
 
 
 __all__ = [
-    "APIKey",
+    "APIKeySpecification",
     "APIKeyAuth",
     "AppSpecification",
     "load_and_parse_spec_file",

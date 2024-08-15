@@ -1,11 +1,16 @@
 import os
 
 from spec_example import EXAMPLE_SPEC
-from sthali_backend import AppSpecification, SthaliBackend, load_and_parse_spec_file, APIKeyAuth, APIKey
+from sthali_backend import AppSpecification, SthaliBackend, load_and_parse_spec_file, APIKeyAuth, APIKeySpecification
 
 
-api_key = APIKey("api_key")
-api_key_auth = APIKeyAuth(api_key, "header", "service")
+api_key = APIKeySpecification(**{
+    "type": "header",
+    "api_key": {
+        "name": "X-API-Key",
+    }
+})
+api_key_auth = APIKeyAuth(api_key, "service")
 
 
 dependencies = [api_key_auth.dependency]
