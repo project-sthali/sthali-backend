@@ -13,6 +13,9 @@ dist
 *_cache
 
 # Volumes
-/volume
-/sthali_auth
-/sthali_crud
+volume
+
+# Symbolic links
+sthali_auth
+sthali_crud
+sthali_db
