@@ -32,7 +32,7 @@ dependencies = [
   "fastapi >= 0.111.1",
   "pydantic >= 2.8.2",
   "pyyaml",
-  "sthali-db",
+  "sthali-crud",
 ]
 
 [project.optional-dependencies]
