@@ -4,8 +4,8 @@ import collections.abc
 import typing
 
 import pydantic
-from sthali_auth import Auth, AuthSpecification
 
+import sthali_auth
 import sthali_crud
 
 from .config import Config
@@ -24,7 +24,11 @@ default_lifespan = sthali_crud.default_lifespan
 @pydantic.dataclasses.dataclass
 class AppSpecification(sthali_crud.AppSpecification):
     """Represents the specification of a SthaliBackend application."""
-    auth: typing.Annotated[AuthSpecification, pydantic.Field(default=None, description="The dependencies for the application"),]
+
+    auth: typing.Annotated[
+        sthali_auth.AuthSpecification,
+        pydantic.Field(default=None, description="The dependencies for the application"),
+    ]
 
     def __post_init__(self):
         self.title = "SthaliBackend"
@@ -52,8 +56,10 @@ class SthaliBackend(sthali_crud.SthaliCRUD):
             lifespan (collections.abc.Callable[..., typing.Any]): The lifespan of the application.
                 Defaults to default_lifespan.
         """
-        auth = Auth(app_spec.auth)
-        auth_dependency = auth.dependency
-        app_spec.dependencies.append(auth_dependency)
+        if app_spec.auth:
+            auth = sthali_auth.Auth(app_spec.auth)
+            breakpoint()
+            # auth_dependency = auth.dependency
+            # app_spec.add_dependency(auth_dependency)
 
         super().__init__(app_spec, lifespan)
