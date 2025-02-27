@@ -1,7 +1,7 @@
 {
     "resources": [
         {
-            "db": {"engine": "tinydb", "path": "./tinydb.json"},
+            "db": {"client": "tinydb", "path": "./tinydb.json"},
             "name": "samples",
             "fields": [
                 {
