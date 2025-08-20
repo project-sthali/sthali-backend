@@ -5,7 +5,7 @@ import typing
 
 import pydantic
 
-import sthali_auth
+# import sthali_auth
 import sthali_crud
 
 from .config import Config
