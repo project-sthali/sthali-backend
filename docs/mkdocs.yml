@@ -15,7 +15,7 @@ nav:
 repo_name: sthali-backend
 repo_url: https://github.com/project-sthali/sthali-backend/
 site_author: Jhunu Fernandes
-site_description: A FastAPI package for backend operations
+site_description: A FastAPI package for implement services
 site_name: sthali-backend
 site_url: https://project-sthali.github.io/sthali-backend/
 theme: readthedocs
