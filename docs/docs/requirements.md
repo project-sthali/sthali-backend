@@ -10,8 +10,6 @@
 #### Runtime Dependencies
 This project requires the following Python packages with specific versions:
 
-- `sthali-auth >= 0.0.1`
-
 - `sthali-crud >= 0.0.7`
 
 
